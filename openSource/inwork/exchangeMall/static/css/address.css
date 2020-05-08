@@ -1,0 +1,51 @@
+.materialGoods{padding: 3%;}
+.address-head{background: #fff;margin-bottom: .5rem;}
+.address-head ul{width: 87%;margin: 0 auto;}
+.address-head ul li{float: left;}
+.address-head ul li.img{margin: 1rem 1rem 1rem 0;background: #f3f3f3;width: 3rem;height: 3rem;text-align: center;line-height: 3rem;}
+.address-head ul li.img img{vertical-align: middle;max-width: 100%;max-width: 90%;}
+.address-head ul li h2{color: #505050;font-size: .7rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;padding-top: 1.3rem;}
+.address-head ul li .goldMoney{display: inline-block;font-size: .67rem;color: #FD4E00;}
+.address-head ul li.detail{width: 61%;}
+.rows-address {/*padding: 3.5% 0;*/background: #fff; border-bottom: 1px solid #f3f3f3;font-size: .68rem;color: #585858;line-height: 2rem;}
+.rows-address label{width: 22%;text-align: right;display: block;float:left;}
+.rows-address .rowsInput{width: 74%;float:left;padding-left: 4%;}
+.rows-address .rowsInput input{color:#666666;height: 2rem;line-height: 2rem;width: 100%;}
+.rows-address .rowsInput textarea{width: 100%;color: #666;line-height:1rem;padding: .5rem;}
+.save_addrBox{ width: 100%;margin: 0 auto;text-align: center;background:#FD4E00;color: #ffffff;height:2.5rem;line-height:2.5rem;border-radius: 5px;}
+.describle p{color:#9B9B9B;font-size: .65rem;line-height: 1.2rem;padding:1rem .5rem 0 .5rem;}
+
+.payMobile{padding-top: .5rem;}
+.mobileDiv{height: 2rem;width: 90%;margin:0 auto 1rem auto;position:relative;}
+.mobileDiv:after{width: .75rem;height: 1rem;background-image: url("../images/icon.png");background-size: 100%;content:"";display: block;left: .3rem;top:.5rem;position:absolute;}
+.mobileDiv .mobile{border-radius: 5px;height: 2rem;line-height: 2rem;width: 100%;background: #ffffff;font-size: .7rem;color: #333333;text-align: center;}
+.mobileBtn{height: 2rem;line-height: 2rem;text-align: center;color: #ffffff;width:90%;margin:0 auto;background: #FF7E00;border-radius: 5px;}
+
+.address-detail{padding-bottom: 1rem;}
+
+/*插件地址*/
+.ChoiceAddress{width: 100%;overflow: hidden;left: 0; bottom: 0;}
+.ChoiceAddress ul{overflow-y: auto;height: 100%;text-align: center;}
+.ChoiceAddress ul li{font-size: 0.8rem;line-height: 1.5rem;}
+.addrPickerBj{width:100%;height: 100%;background:rgba(0,0,0,0.3);position: fixed;left: 0;top:0;z-index: 10;}
+.addrPicker{width: 100%;position: fixed;left: 0;bottom:0;background: #ffffff;z-index: 11;}
+.addrPicker .header{background: url(//img2.coocaa.com/ui/exchange/images/chioceArea.jpg) no-repeat;width:100%;background-size: contain;height: 2.2rem;font-size: .7rem;color: #ffffff;padding-left:.5rem;}
+.addrPicker .header strong{float: right;padding:0 .5rem;display:block;width: 70px;text-align: right;height: 2rem;background: #a60209;color: #fff;line-height: 2rem;}
+.addrPickerBody{position: relative;height: 9rem;overflow: hidden;width: 100%;}
+.addrPickerBody .current{height: 1.8rem;width:100%;border-top: 1px solid #cccccc;border-bottom: 1px solid #cccccc;position:absolute;top:3.6rem;left: 0;margin-top:1px;z-index: 10;}
+.addrPickerBody .picker-items-col{width: 33.3%;float: left;height: 9rem;position: relative;z-index: 11;margin-top: 3.6rem;}
+.addrPickerBody .picker-items-col ul{position: absolute;left: 0;top:0;width: 100%;}
+.addrPickerBody .picker-items-col ul li{padding-left: 1.2rem;font-size: .8rem;color: #999999;height: 1.8rem;line-height: 1.8rem;overflow: hidden;}
+.addrPickerBody .picker-items-col ul li.focus{color: #cc0c04;font-weight: bold;}
+
+.popup{position:fixed;bottom: 27%;z-index: 99;width: 100%;text-align: center;max-width: 640px;display: none;}
+.popup div{display: inline-block;padding:5px 25px;    border-radius: 15px;background: rgba(0,0,0,.5);color: #fff;font-size: .6rem;}
+
+.exchange-box {text-align: center;padding-top: 37%;}
+.exchange-box .success{background: url("../images/icon/success.png") no-repeat; width:16%;margin: 0 auto;height: 5rem;background-size:contain;}
+.exchange-box p{text-align: center;font-size: 1.1rem;color: #333333;line-height: 1.5rem;}
+.exchange-box .desc{text-align: center;font-size: .7rem;color: #333333;line-height:1.5rem;}
+@media screen and (max-width: 320px) {
+    .save_addrBox{bottom: -17%;}
+    .addrPicker .header strong{height: 1.7rem;line-height: 1.7rem;}
+}

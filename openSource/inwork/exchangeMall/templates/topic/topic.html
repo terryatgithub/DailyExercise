@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>金币兑换系统主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" th:href="${static_prefix}+'css/index.css'+${static_suffix}" />
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon"/>
+    <script>
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/1920;
+                document.write('<meta name="viewport" content="width=1920, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=1920, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=1920, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+</head>
+<body>
+<div class="page defaultPage">
+    <header>
+        <div class="new" id="getTopRecord">
+            <span class="newIcon"></span>
+            <div class="newContent"><ul></ul></div>
+        </div>
+
+        <div class="userInfo">
+            <div class="noLogin cf">
+                <div class="btn hide top2">立即登录</div>
+                <div class="coocaa_btn btn top1" id="goLogin">立即登录</div>
+            </div>
+            <div class="loginSuccess cf hide">
+                <div class="goldcoin"  th:if="${activitySwitch=='on'}">
+                    <span class="newsIcon">618金币:</span>
+                    <span class="text" th:text="${activityGold}"></span>
+                </div>
+                <div class="goldcoin"  th:if="${activitySwitch=='off'}">
+                    <span class="newsIcon"></span>
+                    <span class="text"></span>
+                </div>
+                <div class="grade" th:if="${activitySwitch=='on'}">
+                    <span class="newsIcon">总金币:</span>
+                    <span class="text" th:text="${activityGold}"></span>
+                </div>
+                <div class="grade" th:if="${activitySwitch=='off'}">
+                    <span class="newsIcon"></span>
+                    <span class="text"></span>
+                </div>
+                <div class="coocaa_btn btn top1" id="goCoinDetails">金币说明</div>
+                <div class="coocaa_btn btn top1" id="goCoinHistory">金币明细</div>
+                <div class="coocaa_btn btn top1" id="myExchange">兑换记录</div>
+                <div class="btn hide top2">金币说明</div>
+                <div class="btn hide top2">金币明细</div>
+                <div class="btn hide top2">兑换记录</div>
+            </div>
+        </div>
+        <!--<div class="arrow" id="goActivityHome">-->
+            <!--<div class="arrowIcon coocaa_btn btn top1"></div>-->
+            <!--<div class="arrowIcon  btn  hide top2"></div>-->
+        <!--</div>-->
+    </header>
+    <div class="scwrapper" id="scwrapper">
+        <div class="rowsList" id="rowsList"></div>
+    </div>
+</div>
+
+<!--<div class="StrategyPop" id="StrategyPop">-->
+    <!--<img th:data-src="${static_prefix}+'images/Strategy.jpg'+${static_suffix}" class="btn StrategyPopBtn loadImg" />-->
+<!--</div>-->
+
+<div class="page coinHistory hide" >
+    <div class="coinHistoryHead">
+        <span class="coocaa-btn-history" data-id="coins" id="tabCoins">金币明细</span>
+        <span class="coocaa-btn-history" data-id="points" id="tabPoints">成长值明细</span>
+        <span id="coinHistoryPageSize">1/1</span>
+    </div>
+    <div class="historyBody">
+        <div class="historyBodyTips">
+            <span class="icon"></span>
+            <span>您2018年4-6月获得的678金币将于6月30日到期   快去参与大转盘抽大奖，兑换商城兑好礼吧!</span>
+        </div>
+        <div class="historyBodyList" id="historyBodyList">
+            <ul><li><div>操作</div><div>成长值明细</div><div>日期</div></li></ul>
+            <div>没有更多了</div>
+        </div>
+    </div>
+    <div class="noHistory hide">
+        <div class="img-tips"></div>
+        <div class="tips">您还没有金币明细</div>
+        <div class="coocaa-btn-history" id="btnGoEarnCoin">去赚金币</div>
+    </div>
+</div>
+<div class="page exchangeRecord hide">
+    <div class="exchangeRecordHead">
+        <strong>我的兑换</strong>
+        <span id="exchangeRecordPage" data-total=""></span>
+    </div>
+    <div class="noRecord hide">
+        <p>您还未兑换商品</p>
+        <div class="noRecordBtn">去兑换</div>
+    </div>
+    <div class="ex-list" id="ex-list">
+        <ul></ul>
+    </div>
+</div>
+
+<div class="activityInf page">
+    <div class="goodsGalleries">
+        <div class="goodsGalleriesImg" id="goodsGalleries">
+            <div class="img"></div>
+        </div>
+        <div class="scrollBar">
+            <span class="scrollBarUpward actInfoBtn" id="upScroll"></span>
+            <span class="scrollBardown actInfoBtn" id="downScroll"></span>
+        </div>
+    </div>
+    <div class="goodsactivityInfo">
+        <div class="info">
+        </div>
+        <div id="goExchangeBtn" class="goodsInfoBtn actInfoBtn"></div>
+    </div>
+</div>
+
+
+<div class="modePop2 hide modePopBox" id="modePopMobile">
+    <div class="popBox">
+        <div class="popContentMobile">
+            <div class="showMobile">请输入待充值的手机号码</div>
+            <div class="MobileList">
+                <ul class="cf">
+                    <li class="mobBtn">1</li>
+                    <li class="mobBtn">2</li>
+                    <li class="mobBtn">3</li>
+                    <li class="mobBtn">4</li>
+                    <li class="mobBtn">5</li>
+                    <li class="mobBtn">6</li>
+                    <li class="mobBtn">7</li>
+                    <li class="mobBtn">8</li>
+                    <li class="mobBtn">9</li>
+                    <li class="mobBtn li2">0</li>
+                    <li class="mobBtn">删除</li>
+                </ul>
+            </div>
+            <div class='modePopBtn1 mobBtn'>确定兑换</div>
+        </div>
+    </div>
+</div>
+<div class="modePop2 hide modePopBox" id="modePop20">
+    <div class="popBox">
+        <div class="popContent1">
+        </div>
+        <div class="popBtn cf">
+            <div class='modePopBtn popBtn3 btnFocus' id='confirm'>完成</div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var popTmpl = {
+        pop1:{
+            card:"<div class='modePop2Title3'><p><span>恭喜您成功兑换{goodsName}！</span></p></div><div class='card card{cardIndex}'>{cardtext}</div>",
+            card1:"<div class='card card{cardIndex}'><div class='mobile'>{code}</div></div>",
+            card2:"<div class='card card{cardIndex}'>{cardtext}</div>",
+            Voucher:"<div class='modePop2Title3'><p><span>恭喜您成功兑换{goodsName}！</span></p></div><div class='card card3'><div class='mobile'>{code}</div></div>",
+            addrsCode:"<div class='modePop2Title1'>补充收货地址后完成兑换</div><div class='modePop2Title2'>使用微信扫码后填写地址</div><div class='addrQrCode'></div>",
+            VoucherCode:"<div class='modePop2Title1'>恭喜您成功兑换{goodsName}</div><div class='modePop2Title2'>可进入【我的兑换】进行查看</div><div class='addrQrCode'></div><div class='modePop2Tips'>{desc}</div>",
+            popTitle:'<div class="modePop2Title1">{goodsName}</div><div class="popMoneyTime"><div class="popMoney"><span>花费金币：</span><em>{money}</em></div><div class="popTime"><span>兑换时间：</span><em>{exchangeTime}</em></div></div>',
+            unpaid:'<div class="unpaid"><div class="unpaidMoney"><em>待支付：</em><span>{orderMoney}元</span></div><p>请在兑换后{orderTime}内完成支付<br />超时后订单将自动取消并返还所扣金币</p></div>',
+            unpaid5:'<div class="orderFailed">支付晚了一步，订单已失效</div>',
+            popAddrs:'<div class="invoiceBox"><div class="qrCode" id="qrCodeBox"></div><p class="p3">{0}</p></div>',
+            popinvoice:'<div class="invoiceBox"><div class="qrCode" id="popinvoice"></div><p class="p1">微信扫码查看发票信息</p><p class="p2">仅开具付费金额部分的发票，金币兑换部分则无法提供</p></div>',
+            popaddrs1:'<div class="exchangeInfo">\n' +
+                            '<dl class="cf">\n' +
+                                '<dt>交易状态：</dt>\n' +
+                                '<dd class="shippingStatus">{shippingStatus}</dd>\n' +
+                            '</dl>\n' +
+                            '<dl class="cf">\n' +
+                                '<dt>物流单号：</dt>\n' +
+                                '<dd>{shippingNumber}{shippingCode}</dd>\n' +
+                            '</dl>\n' +
+                            '<dl class="cf">\n' +
+                                '<dt>收 货 人 ：</dt>\n' +
+                                '<dd>{receiver}</dd>\n' +
+                            '</dl>\n' +
+                            '<dl class="cf">\n' +
+                                '<dt>联系电话：</dt>\n' +
+                                '<dd>{mobile}</dd>\n' +
+                            '</dl>\n' +
+                            '<dl class="cf">\n' +
+                                '<dt>收货地址：</dt>\n' +
+                                '<dd>{provinceCn} {cityCn} {regionCn} {address}</dd>\n' +
+                            '</dl>\n' +
+                        '</div>'
+        }
+    }
+
+
+</script>
+
+<div class="toast" id="toast"></div>
+
+<div class="cartLoading">
+    <div class="loading"></div>
+</div>
+
+<script th:inline="javascript">
+    var topic = [[${topic}]];     <!-- 商场主页内容 -->
+    var basePath = [[${basePath}]];  <!-- 基础地址 -->
+    var sourceType = [[${sourceType}]];   <!-- 调取方传入源  2为腾讯  1为爱奇艺  0为未传入 -->
+    var openpage = [[${openpage}]];         <!-- 展示参数 主页还是单个活动详情 -->
+    var openTab = [[${openTab}]];         <!-- 展示参数 主页默认落焦TAB ID -->
+    // openTab = '144' //todo testonly
+    var static_prefix = [[${static_prefix}]];
+    var activityGold = [[${activityGold}]];     <!-- 活动主页传入活动金币 -->
+    var activitySwitch = [[${activitySwitch}]];    <!-- 是否为活动状态  off 为关，on为开启 -->
+    var bFirstIn = [[${bFirstIn}]];           <!-- 活动时，是否初次进入兑换商城页面 初次进入加金币-->
+    var bDebugMode = [[${bDebugMode}]];           <!-- 618活动开发环境 debug为测试环境，release为正式环境 -->
+    var operationActivityId = [[${activityId}]];           <!-- 618活动id -->
+</script>
+<script type="text/javascript" th:src="'/static/cordova.js'+${static_suffix}"></script>
+<script type="text/javascript" th:src="'/static/js/coocaamap-1.1.js'+${static_suffix}"></script>
+<script type="text/javascript" th:src="${static_prefix}+'js/jquery.min.js'+${static_suffix}"></script>
+<script type="text/javascript" th:src="${static_prefix}+'js/jquery.qrcode.min.js'+${static_suffix}"></script>
+<script type="text/javascript" th:src="${static_prefix}+'js/tool.js'+${static_suffix}"></script>
+<script type="text/javascript" th:src="${static_prefix}+'js/index.js'+${static_suffix}"></script>
+</body>
+</html>

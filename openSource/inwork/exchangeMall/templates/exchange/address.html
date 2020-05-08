@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  style="height: 100%;">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no;">
+    <title>填写信息</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/css/address.css">
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/zepto.min.js"></script>
+    <div style="display: none;"><script src="https://s22.cnzz.com/z_stat.php?id=1273891424&web_id=1273891424" language="JavaScript"></script></div>
+</head>
+<body style="position: relative;">
+<div class="popup"><div></div></div>
+<div class="address-head">
+    <input type="hidden" class="id" th:value="${goldGoodsInfo.goodsId}">
+    <input type="hidden" class="acids" th:value="${goldRedemptionRecord.id}">
+    <input type="hidden" class="phones" th:value="${goldRedemptionRecord.mobile}">
+    <input type="hidden" class="names" th:value="${goldRedemptionRecord.receiver}">
+    <ul class="cf">
+        <!--<li class="img"><img th:src="@{${goldGoodsInfo.mhImgUrl}}"></li>-->
+        <li class="img"><img th:src="@{${goldGoodsInfo.mhImgUrl}}"></li>
+
+        <li class="detail">
+            <h2 th:text="${goldGoodsInfo.goodsName}"></h2>
+            <span class="goldMoney" th:text="${goldRedemptionRecord.goldNumber} + '金币'"></span>
+        </li>
+    </ul>
+</div>
+
+<div class="address-detail">
+    <input type="hidden" name="addrId" id="addrId" value="" />
+    <input type="hidden" name="tokenId" id="tokenId" th:value="${tokenId}" />
+    <div class="rows-address recive">
+        <label for="receiver">收货人:</label><input type="text" name="receiver">
+    </div>
+    <div class="rows-address phone">
+        <label for="mobile">手机号码:</label><input type="text" name="mobile">
+    </div>
+    <div class="rows-address area" id="toselect-addr">
+        <label>省市地区:</label>
+        <div>
+            <span id="_provinces">省份</span>
+            <span id="_cities">城市</span>
+            <span id="_district">地区</span>
+            <i class="iconfont icon-gengduo"></i>
+        </div>
+    </div>
+    <div class="rows-address">
+        <label for="address">详细地址:</label>
+        <textarea name="address" id="addr_address" rows="3" placeholder="路名或街道地址，门牌号"></textarea>
+    </div>
+
+    <div class="describle">
+        <p>备注：<br>
+            1.您的兑换商品将于15个工作日内寄出<br>
+            2.如有问题请关注“酷开会员”微信公众号联系客服
+        </p>
+    </div>
+
+
+    <!-- 选择地址弹出start -->
+    <div class="page ChoiceAddress" id="provinces"><ul></ul></div>
+    <div class="page ChoiceAddress" id="cities"><ul></ul></div>
+    <div class="page ChoiceAddress" id="district"><ul></ul></div>
+
+</div>
+<div class="save_addrBox">
+    <div></div>
+    <!-- <input type="button" id="save_addr" value="保存" class="smt" /> -->
+</div>
+<script type="text/javascript" src="/js/touch.min.js"></script>
+<script type="text/javascript" src="/js/tool.js?"></script>
+<script type="text/javascript" src="/js/ht_area.js"></script>
+<script src="/js/address.js"></script>
+<script>
+    window.onload = function(){
+        var goodsName = $(".detail h2").text();
+        var id = $('.id').val();
+        _czc.push(['_trackEvent','手机填写地址的曝光次数',goodsName,id,'0', 'body'])
+    };
+</script>
+</body>
+</html>

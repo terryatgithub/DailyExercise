@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" contents="text/html; charset=UTF-8" />
+    <!--下面两种都是ok的-->
+    <!--<script th:src="@{/js/user_info.js}"></script>-->
+    <script src="/js/user_info.js"></script>
+</head>
+<body>
+
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+
+<p th:text="'Hello！ user_info come , ' + ${userName} + '!'" ></p>
+
+<!--<p th:text="  'email:'" ></p>-->
+<p th:text="  ${users.mobilePhone} +'email:'+ ${users.email}+'avatar:'+ ${users.avatar} " ></p>
+
+<button value="点击" onclick="fun()" />点击
+</body>
+</html>

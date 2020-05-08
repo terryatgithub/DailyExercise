@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title th:text="${title}"></title>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no;">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <style>
+        .pageIcon{width: 16%;margin:0 auto;padding-top: 45%;}
+        .pageIcon img{width: 100%;}
+        .pageTitle{text-align: center;font-size: 1.1rem;color: #333333;line-height: 1.5rem;padding-top: 1rem;}
+        .pageText{text-align: center;font-size: .7rem;color: #333333;line-height:1.5rem;}
+    </style>
+</head>
+<body>
+<div class="pageIcon"><img  src="/static/images/icon/success.png" /></div>
+<div class="pageTitle">兑换成功</div>
+<div class="pageText" th:text="${resultMsg}"></div>
+</body>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var basePath = [[${basePath}]];
+    var data ={
+        orderSn:[[${order_sn}]],
+        order_amount:[[${order_amount}]]
+    }
+    /*]]>*/
+</script>
+</html>

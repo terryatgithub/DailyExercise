@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //缩放比例
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/1080;
+                document.write('<meta name="viewport" content="width=1080, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=1080, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=1080, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+    <style>
+        *{padding:0;margin:0;}
+        body{margin:0 auto;width:1080px;text-align:center;}
+        .img{padding-top:20%;}
+        .title{font-size:60px;padding-top:40px;color:#000000;line-height:86px;width:80%;margin:0 auto;}
+        .text{font-size:38px;line-height:60px;color:#898989;width:80%;margin:0 auto;}
+        .btn{padding:60px 0 0 60px;}
+        .btn a{text-align:center;width:258px;height:80px;line-height:80px;font-size:36px;color:#ffffff;text-decoration:none;display:block;background:#eb3300;margin:0 auto;border-radius:10px;}
+    </style>
+</head>
+
+<body>
+<div class="img"><img src="http://img2.coocaa.com/ui/ccwap/formal/img/404.jpg"></div>
+<!--<div class="title">详细错误信息</div>-->
+<div class="text"><p th:text=" ${errorInfo==null?'':errorInfo.msg}" ></p></div>
+</body>
+</html>

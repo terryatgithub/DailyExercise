@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no;">
+    <title th:text="${title==null?'统一异常处理':title}"></title>
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <style>
+        .pageIcon{width: 16%;margin:0 auto;padding-top: 50%;}
+        .pageIcon img{width: 100%;}
+        .pageTitle{text-align: center;font-size: 1.1rem;color: #333333;line-height: 1.5rem;padding-top: 1rem;}
+        .pageText{text-align: center;font-size: .7rem;color: #333333;line-height:1.5rem;}
+    </style>
+</head>
+<body>
+<div class="pageIcon"><img  src="/static/images/icon/errorInfo.png" /></div>
+<div class="pageText" th:text="${errorInfo!=null?errorInfo.msg:''}"></div>
+</body>
+</html>
