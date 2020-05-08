@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>perf test</title>
+    </head>
+    <body>
+        <div id='grow'>grow memory test</div>
+        <div id='create'>create memory detached dom</div>
+        <script>
+            let x = []
+            function grow() {
+                alert('start grow..')
+                for(let i = 0; i < 10000; i++) {
+                    document.body.appendChild(document.createElement('div')); //dom nodes -> js memory
+                }
+                x.push(new Array(1000000).join('x')) //js heap
+                alert('grow end')
+            }
+            document.getElementById('grow').addEventListener('click', grow)
+
+            let detachedNodes; 
+            function create() {
+                console.log('start create...')
+                let ul = document.createElement('ul')
+                for(let i = 0; i < 10; i++) {
+                    let li = document.createElement('li')
+                    ul.appendChild(li)
+                }
+                detachedNodes = ul
+                console.log('end create...')
+            }
+            document.getElementById('create').addEventListener('click', create)
+        </script>
+    </body>
+</html>

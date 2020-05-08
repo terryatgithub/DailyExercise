@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Js错误捕获</title> 
+  <style>
+      img {
+          width: 100%;
+      }
+  </style>
+  <script type="text/javascript"> 
+    /** 
+     * @param {String} errorMessage  错误信息 
+     * @param {String} scriptURI   出错的文件 
+     * @param {Long}  lineNumber   出错代码的行号 
+     * @param {Long}  columnNumber  出错代码的列号 
+     * @param {Object} errorObj    错误的详细信息，Anything 
+     */
+    // window.onerror = function(errorMessage, scriptURI, lineNumber,columnNumber,errorObj) { 
+    //     // debugger;
+    //     console.log("错误信息：" , errorMessage); 
+    //     console.log("出错文件：" , scriptURI); 
+    //     console.log("出错行号：" , lineNumber); 
+    //     console.log("出错列号：" , columnNumber); 
+    //     console.log("错误详情：" , errorObj); 
+    // } 
+    // window.addEventListener('error', function(event) {
+    //     console.log('error: ' + {event})
+    // })
+    
+    const errorHandler = function(e) {
+        console.error({e})
+        if(e.target.tagName === 'IMG') {
+            e.target.src = e.target.src.slice(0, e.target.src.length-1)
+        }
+    }
+    window.addEventListener('error', errorHandler)
+    const onUnhandledrejection = function(e) {
+        console.error('promise reject: ' + {e})
+        e.promise.catch(err => console.log(err + ' handled manually'))
+    }
+    window.addEventListener('unhandledrejection', onUnhandledrejection)
+    const onRejectionhandled = function(e) {
+        console.error('promise reject catched: ' + {e})
+    }
+    window.addEventListener('rejectionhandled', onRejectionhandled)
+  </script> 
+</head> 
+<body> 
+  <!-- <script type="text/javascript" src="error.js"></script>  -->
+  <script src="imgload.js"></script>
+  <!-- <script src="asyncerror.js"></script> -->
+  <!-- <script src="scriptload.js"></script> -->
+  <!-- <script src="https://webx.coocaa.com/yuanbo/test/error.php" crossorigin></script> -->
+</body> 
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>javascript text</title>
+<script src="js/jquery-1.8.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   var url = "#"+window.location.href.split("#")[1];
+   Router(url);
+   $("a").click(function(){
+        var url = $(this).attr("href");
+        //Router(url);
+   });
+   $("input[type=\"button\"]").click(function(){
+       var url = $(this).attr("data");
+       //Router(url);
+       window.location.href="#windowsubmit";
+   });
+   function Router(url){
+       var bview = $("#view");
+       switch(url){
+           case "#windowsubmit":bview.text("我提交了表单"); break;
+           case "#index" : bview.text("我的网站首页");break;
+           case "#detail" : bview.text("关于我们");break;
+           case "#content" : bview.text("我的QQ：602730971");break;
+           default:bview.text("未知的网站未知");break;
+       }
+   }
+   $(window).bind("hashchange",function(){
+      //alert( window.location.href);
+      var url = "#"+window.location.href.split("#")[1];
+      //alert(url);
+      Router(url);
+   });
+});
+</script>
+</head>
+ 
+<body onload="loadfun()">
+<a href="#index">首页</a>
+<a href="#detail">关于我们</a>
+<a href="#content">联系我们</a>
+<fieldset>
+    <legend>按钮跳转</legend>
+    <input type="button" value="提交事件" onclick="" data="#windowsubmit" />
+</fieldset>
+<fieldset>
+<legend>路由管理</legend>
+<div>
+<a href="http://www.baidu.com">百度一下</a><br />
+<a href="http://www.hao123.com">Hao123网站导航</a><br />
+<a href="http://www.163.com">网易新闻</a><br />
+<a href="http://www.qq.com">腾讯新闻</a>
+</div>
+</fieldset>
+<fieldset>
+<legend>内容控制</legend>
+<div id="view">
+   adfasdfasdfasdf
+</div>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,32 @@
+header， section, footer{
+    display: flex;
+    justify-content: center;
+}
+header ul{
+    display: flex;
+    justify-content: space-around;
+}
+header ul>li {
+    list-style-type: none;
+}
+#JSOutputZone {
+    background: lightcyan;
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid;
+    text-align: center;
+}
+
+a{text-decoration: none;}
+a:link { color: blue;}
+a:visited {color: gray;}
+a:focus {color: yellow;}
+a:hover {color: purple;}
+a:active {color: lightblue;}
+
+div.todo-list-container {
+    float:right;
+}

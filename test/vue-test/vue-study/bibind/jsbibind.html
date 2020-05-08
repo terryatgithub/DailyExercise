@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>vue bi-bind study</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="app">
+            <input type="texty" id="a">
+            <span id="b"></span>
+        </div>
+
+        <script>
+            var obj = {}
+            var val = 'hello, bi-bind'
+            Object.defineProperty(obj, 'val', {
+                get () {
+                    console.log('getter()..')
+                    return val
+                },
+
+                set (newVal) {
+                    val = newVal
+                    console.log('setter()...')
+                    document.getElementById('a').value = val
+                    document.getElementById('b').innerHTML = val
+                }
+            })
+            document.addEventListener('keyup', function(e) {
+                obj.val = e.target.value
+            })
+        </script>
+    </body>
+</html>

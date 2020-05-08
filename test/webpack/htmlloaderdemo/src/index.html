@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache">
+	<title>demo</title>
+	<script type="text/javascript">
+		; (function () {
+			var baseW = 1280; //mobile: 1920; tv:1280
+			console.log('navigator.userAgent = ' + navigator.userAgent + ", window.screen.width = " + window.screen.width);
+			if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+				var version = parseFloat(RegExp.$1);
+				if (version > 2.3) {
+					var phoneScale = parseInt(window.screen.width) / baseW;
+					document.write('<meta name="viewport" content="width='+ baseW + ', minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+				} else {
+					document.write('<meta name="viewport" content="width='+ baseW +'">');
+				}
+			} else {
+				document.write('<meta name="viewport" content="width='+ baseW +', user-scalable=no">');
+			}
+		})();
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

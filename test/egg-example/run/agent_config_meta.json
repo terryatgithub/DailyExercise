@@ -1,0 +1,276 @@
+{
+  "keys": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js",
+  "view": {
+    "defaultViewEngine": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js",
+    "mapping": {
+      ".tpl": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js"
+    },
+    "root": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "cache": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "defaultExtension": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js"
+  },
+  "news": {
+    "pageSize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js",
+    "serverUrl": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js"
+  },
+  "middleware": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js",
+  "robot": {
+    "ua": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\config\\config.default.js"
+  },
+  "session": {
+    "maxAge": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "key": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "httpOnly": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "encrypt": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "protocolWhiteList": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "defaultMiddleware": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "type": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "ignoreJSON": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "useSession": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "cookieName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "sessionName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "headerName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "bodyName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "queryName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "refererWhiteList": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "maxAge": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "includeSubdomains": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "policy": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "checkAddress": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "callback": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "csrf": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "templatePath": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "dirs": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "queryField": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieField": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieDomain": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.unittest.js",
+    "eventSources": {
+      "default": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.default.js",
+      "development": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-schedule@3.6.4@egg-schedule\\config\\config.default.js",
+      "file": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-schedule@3.6.4@egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-schedule@3.6.4@egg-schedule\\config\\config.default.js"
+  },
+  "multipart": {
+    "mode": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "autoFields": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "defaultCharset": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "fieldSize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "fields": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "fileSize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "files": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "fileExtensions": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "whitelist": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "tmpdir": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-multipart@2.10.2@egg-multipart\\config\\config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFiles": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxDays": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dir": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dynamic": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "preload": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "buffer": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "maxFiles": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view-nunjucks@2.2.0@egg-view-nunjucks\\config\\config.default.js",
+    "throwOnUndefined": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view-nunjucks@2.2.0@egg-view-nunjucks\\config\\config.default.js",
+    "trimBlocks": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view-nunjucks@2.2.0@egg-view-nunjucks\\config\\config.default.js",
+    "lstripBlocks": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view-nunjucks@2.2.0@egg-view-nunjucks\\config\\config.default.js",
+    "cache": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg-view-nunjucks@2.2.0@egg-view-nunjucks\\config\\config.default.js"
+  },
+  "env": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "name": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "cookies": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "proxy": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "maxIpsCount": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "maxProxyCount": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "protocolHeaders": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "ipHeaders": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "hostHeaders": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "pkg": {
+    "name": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "version": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "description": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "main": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "scripts": {
+      "test": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "cov": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "dev": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    },
+    "author": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "license": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "dependencies": {
+      "egg": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "egg-mock": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "egg-view-nunjucks": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "moment": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "egg-bin": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "HOME": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "rundir": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "notFound": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "sitefile": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "middlewares": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "httpClient": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "encoding": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "formLimit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "jsonLimit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "textLimit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "strict": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "depth": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "parameterLimit": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    },
+    "onerror": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "logger": {
+    "dir": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "encoding": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "env": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "level": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "consoleLevel": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.unittest.js",
+    "disableConsoleAfterReady": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "outputJSON": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "buffer": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.unittest.js",
+    "appLogName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "coreLogName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "agentLogName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "errorLogName": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "coreLogger": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "allowDebugAtProd": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "request": {
+      "timeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "maxSockets": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "maxSockets": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "logging": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "workerStartTimeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "serverTimeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "port": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+      "hostname": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js",
+    "responseTimeout": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+  },
+  "onClientError": "D:\\11_Work\\github\\DailyExercise\\test\\egg-example\\node_modules\\_egg@2.26.0@egg\\config\\config.default.js"
+}

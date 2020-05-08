@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>documentFragment test</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" id="a">
+            "hello document's Fragment"
+        </div>
+        <script>
+            document.getElementById('a').addEventListener('click', function() {
+                var dom = nodeToFragment(document.getElementById('app'))
+                console.log('fragment: ' + dom)
+                console.log(document.getElementById('app'))
+            })
+
+            function nodeToFragment(node) {
+                var frag = document.createDocumentFragment()
+                var child;
+                while(child = node.firstChild) {
+                    frag.appendChild(child)
+                }
+                return frag
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "handlebars": "^4.7.6",
+    "html-loader": "^1.1.0",
+    "image-webpack-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.0",
+    "terser-webpack-plugin": "^2.3.6",
+    "url-loader": "^4.1.0"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>dom MutationObserver</title>
+    </head>
+
+    <body>
+        <ol contenteditable oninput="">
+        <li>Press enter</li>
+        </ol>
+        <img src="oldsrc.png" alt='test' />
+        <div>背景图设置</div>
+        <button onclick="loadImg()">点击加载图片src</button>
+        <script>
+        var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+        var list = document.querySelector('ol');
+        var img = document.querySelector('img')
+        var 
+        function loadImg() {
+            debugger
+            img.src = 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg'
+            img.onload = () => {
+                console.log('img load ok')
+            }
+            img.onerror = (e) => {
+                console.error('img err: ' + e)
+            }
+        }
+        var observeImg = new MutationObserver(function(mutations) {
+            debugger
+            mutations.forEach(function(mutation){
+                console.log({mutation})
+            })
+        })
+        observeImg.observe(img, {
+            attributes: true,
+            attributeOldValue: true,
+        })
+        var observer = new MutationObserver(function(mutations) {  
+            debugger;
+            mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList') {
+                var list_values = [].slice.call(list.children)
+                    .map( function(node) { return node.innerHTML; })
+                    .filter( function(s) {
+                    if (s === '<br>') {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+                });
+                console.log(list_values);
+            }
+            });
+        });
+        
+        observer.observe(list, {
+            attributes: true, 
+            attributeOldValue: true,
+            childList: true, 
+            characterData: true,
+            characterDataOldValue: true,
+            subtree: true
+        });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,18 @@
+.hello {
+    color: red;
+    font-size: 50px;
+    font-family: 'Mother Tongue', serif;
+}
+body {
+    background: url('./images/bg.png');
+}
+img {
+    width: 100px;
+}
+
+@font-face {
+    font-family: 'Mother Tongue';
+    src: url('./font/Mother-Tongue-Personal-Use-2.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}

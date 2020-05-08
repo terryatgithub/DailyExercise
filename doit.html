@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>do it</title>
+    <link rel="stylesheet" href="styles/index.css"/>
 </head>
 <body>
-$END$
+    <header>
+        <ul>
+            <li><a href="#JSContainer">JS</a></li>
+            <li><a href="#HTML">HTML</a></li>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#HTTP">HTTP/TCP</a></li>
+            <li><a href="#Node">Node</a></li>
+            <li><a href="#Vue">Vue</a></li>
+        </ul>
+    </header>
+    <section class="content-container">
+        <div class="todo-list-container">
+            <h3>todo list</h3>
+            <ol>
+                <li>加入webpack等工程化工具</li>
+                <li>加入单元测试模块（包括测试数据等）</li>
+                <li>加入后台Node支持</li>
+            </ol>
+        </div>
+
+        <div class="js-zone" id="JSContainer">
+            <h1>js</h1>
+            <div class="js-copy">
+                <h2>JS Copy</h2>
+                <div id="JSOutputZone"></div>
+                <button id="JSBtnDeepCopy">DeepCopy</button>
+                <button id="JSBtnShallowCopy">ShallowCopy</button>
+            </div>
+        </div>
+    </section>
+    <footer>@copyleft yb 2020</footer>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>sentry test</title>
+    <script src="https://browser.sentry-cdn.com/5.15.4/bundle.min.js" integrity="sha384-Nrg+xiw+qRl3grVrxJtWazjeZmUwoSt0FAVsbthlJ5OMpx0G08bqIq3b/v0hPjhB" crossorigin="anonymous"></script>
+    <script>
+        Sentry.init({ dsn: 'https://37f0c822f7de4ff0b3b3282ddac1ef56@o381167.ingest.sentry.io/5208055' });
+        myUndefinedFunction();
+    </script>
+</head>
+
+<body>
+    <h1>Sentry test</h1>
+    <script>
+        let a = b;
+        async function foo() {
+            return new Promise((resolve,reject) => {
+                setTimeout(reject, 1000)
+            })
+        }
+        foo()
+    </script>
+</body>
