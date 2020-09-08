@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "mime": "^2.4.5",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "mz": "^2.7.0",
+    "nunjucks": "^3.2.1",
+    "sequelize": "^5.21.9",
+    "uuid": "^8.0.0",
+    "ws": "^7.3.0"
+  },
+  "name": "view-koa",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "set NODE_ENV=test && node app.js",
+    "dev": "set NODE_ENV='development' && node app.js",
+    "build": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

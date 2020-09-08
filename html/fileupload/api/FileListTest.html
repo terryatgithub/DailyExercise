@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="fileItem" multiple type="file" />
+    <script>
+      // var file = fileItem.files[0]
+
+      // 输出用户所选文件的文件name/type/size
+      var pullFiles = function () {
+        var files = fileItem.files;
+        let fl = files.length;
+        let i = 0;
+        while (i < fl) {
+          let file = files[i];
+          console.log({ file });
+          i++;
+        }
+      };
+
+      // 设置change事件处理函数
+      fileItem.onchange = pullFiles;
+    </script>
+  </body>
+</html>

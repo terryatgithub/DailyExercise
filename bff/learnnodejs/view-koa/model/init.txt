@@ -1,0 +1,20 @@
+
+grant all privileges on test.* to 'www'@'%' identified by 'www';
+
+CREATE USER 'www'@'localhost' IDENTIFIED by 'www';
+grant all on test.* to 'www'@'localhost';
+create database test;
+show databases; // status;
+
+use test;
+
+create table pets (
+    id varchar(50) not null,
+    name varchar(100) not null,
+    gender bool not null,
+    birth varchar(10) not null,
+    createdAt bigint not null,
+    updatedAt bigint not null,
+    version bigint not null,
+    primary key (id)
+) engine=innodb;

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File size</title>
+    <style>
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+
+        /* Separate rule for compatibility, :focus-within is required on modern Firefox and Chrome */
+        input.visually-hidden:focus+label {
+            outline: thin dotted;
+        }
+
+        input.visually-hidden:focus-within+label {
+            outline: thin dotted;
+        }
+        #dropbox {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <!-- <label for="">请选择文件</label>
+        <input type="file" id="inputFiles" multiple onchange="handleFiles(this.files)" style="display: none;">
+        <button onclick="handleButtonClick()">点击上传文件</button> -->
+        <!-- <input type="file" id="fileElem" multiple accept="image/*" style="display:none"
+            onchange="handleFiles(this.files)">
+        <button id="fileSelect">Select some files</button> -->
+
+        <input type="file" id="fileElem" multiple accept="image/*" class="visually-hidden">
+        <label for="fileElem">Select some files</label>
+
+        <div id="dropbox">请拖放文件到此区域</div>
+
+    </form>
+    <div id="stat"></div>
+    <div id="stat2"></div>
+    <script>
+        //隐藏input，点击label触发
+        // const fileSelect = document.getElementById("fileSelect"),
+        // fileElem = document.getElementById("fileElem");
+        
+        // fileSelect.addEventListener("click", function (e) {
+        //     if (fileElem) {
+        //         fileElem.click();
+        //     }
+        // }, false);
+        //拖放文件
+        const dropbox = document.getElementById('dropbox')
+        dropbox.addEventListener('dragenter', dragenter, false)
+        dropbox.addEventListener('dragover', dragover, false)
+        dropbox.addEventListener('drop', drop, false)
+        function dragenter(e) {
+            console.log('dragenter', e);
+            e.stopPropagation()
+            e.preventDefault()
+        }
+        function dragover(e) {
+            console.log('dragover', e);
+            e.stopPropagation()
+            e.preventDefault()
+        }
+        function drop(e) {
+            console.log('drop', e);
+            e.stopPropagation()
+            e.preventDefault()
+
+            const dt = e.dataTransfer
+            const files = dt.files
+
+            handleFiles(files)
+        }
+        // const el = document.getElementById('inputFiles')
+        // function handleButtonClick() {
+        //     el && el.click()
+        // }
+        // el.addEventListener('change', handler, false)
+        // function handler() {
+        //     console.log('change handler');
+        //     const files = this.files
+        //     let output = '', num = 0, sizes = 0
+        //     Array.prototype.forEach.call(files, file => {
+        //         output += `${file.name}: ${file.size} - ${file.type} <br><br>`
+        //         num++
+        //         sizes += file.size
+        //     });
+        //     output += `<br>total num: ${num}
+        //         <br>total sizes: ${sizes}
+        //     `
+        //     document.getElementById('stat2').innerHTML = output
+        // }
+        function handleFiles(files) {
+            console.log('change handleFiles');
+            let output = '', num = 0, sizes = 0
+            Array.prototype.forEach.call(files, file => {
+                output += `${file.name}: ${file.size} - ${file.type} <br><br>`
+                num++
+                sizes += file.size
+            });
+            output += `<br>total num: ${num}
+                <br>total sizes: ${sizes}
+            `
+            document.getElementById('stat').innerHTML = output
+        }
+    </script>
+</body>
+
+</html>

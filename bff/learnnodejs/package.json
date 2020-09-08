@@ -1,0 +1,25 @@
+{
+  "name": "learnnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "mime": "^2.4.5",
+    "mz": "^2.7.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mocha": "^7.1.2",
+    "nunjucks": "^3.2.1"
+  }
+}

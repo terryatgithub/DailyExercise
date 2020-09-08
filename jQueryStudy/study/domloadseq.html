@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM event test</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous" onload="console.log('jquery script load')">
+        </script>
+    <script crossorigin="anonymous" integrity="sha384-DX1FVVXdGcNR016Jj6c5WuxYmyUvkb2/0ZMXKwbXaXs8j9tPs3e4RUjNg4tViEj4"
+        src="https://lib.baomitu.com/echarts/4.7.0/echarts-en.common.js"
+        onload="console.log('echarts script load (defer0)')" defer>
+        </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.15/lodash.core.js"
+        onload="console.log('lodash script load (defer1)')" defer>
+        </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/10/three.js"
+        onload="console.log('three script load (async)')" async>
+        </script>
+</head>
+
+<body>
+    <h1>test dom event</h1>
+    <p>some text... in p </p>
+    <img src="http://img3.imgtn.bdimg.com/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt="pic"
+        onload="console.log('img load')" />
+
+    <script>
+        console.log('script parse 0 ')
+        var register = function (event) {
+            window.addEventListener(event, function () {
+                console.log(`${event} triggered`)
+            })
+        }
+        register('DOMContentLoaded')
+        console.log('script parse 1 ')
+        register('load')
+        console.log('script parse 2 ')
+        register('ready')
+        console.log('script parse 3 ')
+        $(function () {
+            var el = document.createElement('div')
+            el.innerHTML = 'div dynamic add'
+            $('body').append(el)
+            console.log('$(function()). dynamic add div')
+        })
+        $(document).ready(function () {
+            console.log('$().ready()')
+        })
+            // $(document).load(function(){
+            //     console.log('$().load()')
+            // })
+    </script>
+
+</body>
+
+</html>
+
+<!-- 
+jquery script load
+domloadseq.html:43 script parse 0 
+domloadseq.html:50 script parse 1 
+domloadseq.html:52 script parse 2 
+domloadseq.html:54 script parse 3 
+domloadseq.html:40 img load
+domloadseq.html:30 three script load (async)
+domloadseq.html:18 echarts script load (defer0)
+domloadseq.html:24 lodash script load (defer1)
+domloadseq.html:46 DOMContentLoaded triggered
+domloadseq.html:46 load triggered
+domloadseq.html:59 $(function()). dynamic add div
+domloadseq.html:62 $().ready()
+-->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do it</title> 
+</head>
+<body>
+    <div id='test'>div</div>
+    <div id='test2'>div</div>
+    <script>
+        document.getElementById('test2').onclick = e => {
+            console.log('div2 onkeydown' + {e})
+        }
+        document.getElementById('test').onclick = e => {
+            console.log('div onkeydown' + {e})
+        }
+        document.onclick = e => {
+            console.log('document onkeydown' + e.code)
+        }
+    </script>
+</body>
+</html>

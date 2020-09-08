@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>在不存在图片时显示默认图片练习 by 阿会楠</title>
+    <style type="text/css">
+      img {
+        border: 1px solid #cccccc;
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="1.jpg" />
+    <img src="2.jpg" />
+    <img src="3.jpg" />
+    <img src="4.jpg" />
+    <script type="text/javascript">
+      var imgs = document.images;
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onerror = function () {
+          this.src = "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1599320623&di=1390ab37513ddda49f48fdd44af318e5&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg";
+        };
+      }
+    </script>
+  </body>
+</html>

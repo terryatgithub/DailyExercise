@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594703847778&di=90b0e8f9182384b1ea322cf041ee15a8&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F05%2F00%2F01300000194285122188000535877.jpg"
+        alt="" />
+    <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594703847778&di=90b0e8f9182384b1ea322cf041ee15a8&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F05%2F00%2F01300000194285122188000535877.jpg" /> -->
+    <div id="test">mutation observer test</div>
+    <button onclick="add()">add</button>
+    <button onclick="remove()">remove</button>
+    <script>
+        // const defaultImgPath = 'https://1timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594703847778&di=90b0e8f9182384b1ea322cf041ee15a8&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F05%2F00%2F01300000194285122188000535877.jpg'
+        // function callback(mutationList, observer) {
+        //     mutationList.forEach((mutation) => {
+        //         console.log(`cb, ${mutation.type}`);
+        //         switch (mutation.type) {
+        //             case 'childList':
+        //                 /* 从树上添加或移除一个或更多的子节点；参见 mutation.addedNodes 与
+        //                 mutation.removedNodes */
+        //                 break;
+        //             case 'attributes':
+        //                 /* mutation.target 中某节点的一个属性值被更改；该属性名称在 mutation.attributeName 中，
+        //                 该属性之前的值为 mutation.oldValue */
+        //                 break;
+        //         }
+        //     });
+        // }
+        // var targetNode = document.querySelector("#test");
+        // var observerOptions = {
+        //     childList: true,  // 观察目标子节点的变化，是否有添加或者删除
+        //     attributes: true, // 观察属性变动
+        //     subtree: true     // 观察后代节点，默认为 false
+        // }
+
+        // var observer = new MutationObserver(callback);
+        // observer.observe(targetNode, observerOptions);
+
+        // function add() {
+        //     const p = document.createElement('p')
+        //     p.id = 'testImg'
+        //     p.innerHTML = 'this is a p' + Math.random()
+        //     test.appendChild(p)
+
+        //     testImg.alt='backupalt'
+        // }
+        // function remove() {
+        //     test.removeChild(test.childNodes[0])
+        // }
+ 
+    </script>
+    <!-- <script src="./test.js"></script> -->
+    <script src="./microtask.js"></script>
+
+</body>
+
+</html>
