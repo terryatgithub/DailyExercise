@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        background: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>window.requestAnimationFrame</h1>
+    <div id="demo"></div>
+    <script>
+        let start 
+        function step(timestamp){
+            !start && (start = timestamp)
+            const elapsed = timestamp - start
+            demo.style.transform = `translateX(${Math.min(0.1*elapsed)}px)`
+            if(elapsed < 20000) {
+                window.requestAnimationFrame(step)
+            }
+        }
+        window.requestAnimationFrame(step)
+    </script>
+  </body>
+</html>

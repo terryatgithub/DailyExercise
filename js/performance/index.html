@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>performance</title>
+  </head>
+  <body>
+    <div>performance test</div>
+    <script>
+      init();
+      function init() {
+        performance.mark("startTask1");
+        dosomething();
+        performance.mark("endTask1");
+        logPerformance();
+      }
+      function logPerformance() {
+        let perfEntries = performance.getEntriesByType("mark");
+        for (let i = 0; i < perfEntries.length; i++) {
+          console.log(`Name: ${perfEntries[i].name} 
+                Entry Type: ${perfEntries[i].entryType}
+                Start Time: ${perfEntries[i].startTime}
+                Duration: ${perfEntries[i].duration} \n
+            `);
+        }
+        console.log(performance.timing);
+      }
+      function dosomething() {
+        let cnt;
+        for (let i = 0; i < 1000; i++) {
+          cnt++;
+        }
+      }
+
+      function onLoad(){
+          let now = new Date().getTime()
+          let pageLoadTime = now - performance.timing.navigationStart
+          console.log('User-perceived page loading time: ' + pageLoadTime);
+      }
+      onLoad()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe win</title>
+</head>
+<body>
+    <p class="output">iFrame body</p>
+    <script>
+        let output = document.querySelector('.output')
+        
+        window.addEventListener('message', onMessage) 
+
+        function onMessage(e) {
+            console.log('iframe: e: ', {e});
+            output.innerHTML = e.data
+            // 使用传输端口发送一个消息回给主框架
+            e.ports[0].postMessage('message back from the IFrame.')
+        }
+    </script>
+</body>
+</html>

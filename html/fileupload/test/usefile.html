@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .visually-hidden:not(:focus):not(:active) { */
+      /* .visually-hidden { */
+      /* position: absolute !important; */
+      /* height: 1px; */
+      /* width: 1px; */
+      /* overflow: hidden; */
+      /* clip: rect(1px, 1px, 1px, 1px); */
+      /* } */
+      .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+      }
+      input.visually-hidden:focus + label {
+        outline: thin dotted;
+      }
+      input.visually-hidden:focus-within + label {
+        outline: thin dotted;
+      }
+      #dropbox {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: dotted thin;
+      }
+      .obj {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="file"
+      id="fileItem"
+      multiple
+      onchange="handleFiles(this.files)"
+      placeholder="请选择文件"
+    />
+
+    <input
+      type="file"
+      id="fileEle"
+      multiple
+      accept="image/*"
+      style="display: none"
+      onchange="handleFiles(this.files)"
+      placeholder="请选择文件"
+    />
+    <button id="fileSelect">Select some pic</button>
+    <button onclick="sendFiles()">sendFiles</button>
+    <input
+      type="file"
+      id="fileEleLabel"
+      multiple
+      accept="image/*"
+      class="visually-hidden"
+    />
+    <label for="fileEleLabel">Label: Select some img</label>
+
+    <div id="dropbox">drag and drop files here</div>
+
+    <div id="preview">Preview Zone by FileReader()</div>
+
+    <input
+      type="file"
+      multiple
+      id="fileElemObjectURL"
+      style="display: none"
+      accept="image/*"
+      onchange="handleFilesByCreateObjectURL(this.files)"
+    />
+    <a href="#" id="fileSelectATag">select some files</a>
+    <div id="previewObjectURL">
+      <p>No files Selected</p>
+    </div>
+
+    <iframe id="viewer" frameborder="0"></iframe>
+    <button onclick="viewPdf()">查看pdf</button>
+    <video id="video">video</video>
+    <button onclick="viewVideo()">预览视频</button>
+    <script>
+      function viewVideo() {
+        let file = fileItem.files[0];
+        const obj_url = URL.createObjectURL(file);
+        video.src = obj_url;
+        video.play();
+        URL.revokeObjectURL(obj_url);
+      }
+      function viewPdf() {
+        let file = fileItem.files[0];
+        const obj_url = window.URL.createObjectURL(file);
+        viewer.setAttribute("src", obj_url);
+        window.URL.revokeObjectURL(obj_url);
+      }
+
+      // 上传所有图片
+      function sendFiles() {
+        // 遍历页面所有图片，批量上传
+        const imgs = document.querySelectorAll(".obj");
+        let len = imgs.length;
+        for (let i = 0; i < len; i++) {
+          new FileUpload(imgs[i], imgs[i].file);
+        }
+      }
+      // 上传图片的函数
+      function FileUpload(img, file) {
+        // 创建 FileReader读取图片文件
+        const reader = new FileReader();
+
+        // 创建进度条提示
+        // this.ctrl = createThrobber(img);
+
+        // 创建 xhr
+        const xhr = new XMLHttpRequest();
+        this.xhr = xhr;
+
+        let self = this;
+
+        // 创建上传进度条
+        this.xhr.upload.addEventListener(
+          "progress",
+          function (e) {
+            if (e.lengthComputable) {
+              let percentage = Math.round((e.loaded * 100) / e.total);
+              //   self.ctrl.update(percentage);
+            }
+          },
+          false
+        );
+        // 注册xhr upload progress / load事件
+        this.xhr.upload.addEventListener(
+          "load",
+          function (e) {
+            // self.ctrl.update(100);
+            // let canvas = self.ctrl.ctx.canvas;
+            // canvas.parentNode.removeChild(canvas);
+          },
+          false
+        );
+        this.xhr.open("POST", "http://upload.api");
+        xhr.overrideMimeType("text/plain; charset=x-user-defined-binary");
+
+        // 注册 FileReader onload事件
+        reader.onload = function (e) {
+          xhr.send(e.target.result);
+        };
+        // FileReader对象用于将文件转换为二进制字符串。
+        reader.readAsBinaryString(file);
+      }
+
+      let selectedFile = fileItem.files[0];
+      function handleFilesOld(files) {
+        Array.from(files).forEach((file) => console.log({ file }));
+      }
+
+      function handleFiles(files) {
+        for (let i = 0; i < files.length; i++) {
+          let file = files[i];
+          const imageType = /^image\//;
+          if (!imageType.test(file.type)) {
+            continue;
+          }
+
+          let img = document.createElement("img");
+          img.classList.add("obj");
+          // 保存 file，为后续上传文件用，这里很妙，并且.file只是个引用属性，本质是指针，不会占用太多内存。
+          img.file = file;
+          preview.appendChild(img);
+
+          // 读取file为image src
+          let reader = new FileReader();
+          //   reader.onload = function(event) {
+          //   img.src = reader.result
+          //   }
+          debugger;
+          reader.onload = (function (oImg) {
+            return function (e) {
+              oImg.src = e.target.result; // 这样也可以
+            };
+          })(img);
+          reader.readAsDataURL(file);
+        }
+      }
+
+      fileSelectATag.addEventListener(
+        "click",
+        function (e) {
+          if (fileElemObjectURL) {
+            fileElemObjectURL.click();
+          }
+          e.preventDefault(); // 避免页面导航到 #
+        },
+        false
+      );
+
+      function handleFilesByCreateObjectURL(files) {
+        // 显示缩略图
+        if (files.length === 0) {
+          previewObjectURL.innerHTML = "<p>no files selected</p>";
+          return;
+        }
+        previewObjectURL.innerHTML = "";
+        for (let i = 0; i < files.length; i++) {
+          let file = files[i];
+          let src = URL.createObjectURL(file);
+          let img = document.createElement("img");
+          img.height = 100;
+          img.onload = function () {
+            URL.revokeObjectURL(src);
+          };
+          img.src = src;
+          previewObjectURL.appendChild(img);
+
+          let span = document.createElement("span");
+          span.innerHTML = file.name + ": " + file.type + ": " + file.size;
+          previewObjectURL.appendChild(span);
+        }
+      }
+
+      fileSelect.addEventListener(
+        "click",
+        (e) => {
+          if (fileEle) {
+            fileEle.click();
+          }
+        },
+        false
+      );
+
+      function sendFileDrop(file) {
+        const uri = "/index.php";
+        const xhr = new XMLHttpRequest();
+        const fd = new FormData();
+
+        xhr.open("POST", uri, true);
+        xhr.onreadystatechange = function (response) {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+          }
+        };
+        fd.append("myFile", file);
+        // 初始化一个 multipart/form-data upload
+        xhr.send(fd);
+      }
+
+      window.onload = function () {
+        dropbox.addEventListener("dragenter", dragenter, false);
+        dropbox.addEventListener("dragover", dragover, false);
+        dropbox.addEventListener("drop", drop, false);
+      };
+
+      function dragenter(e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      function dragover(e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      function drop(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const files = event.dataTransfer.files;
+        for (let i = 0; i < files.length; i++) {
+          sendFile(files[i]);
+        }
+      }
+    </script>
+  </body>
+</html>

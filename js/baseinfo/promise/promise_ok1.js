@@ -51,7 +51,7 @@ class MyPromise {
       }
     }
     // 为了保证函数执行顺序，需要将两个函数体代码使用 setTimeout 包裹起来 why?
-    // 为了支持同步的promise，保障then注册的方法按顺序执行，这里采用异步调用
+    // 为了支持同步的promise，保障then注册的方法按顺序执行，所以要用异步抱起来
     setTimtout(() => run(), 0)
   }
 
@@ -224,3 +224,15 @@ class MyPromise {
     });
   }
 }
+
+
+// async/await
+/// await 是 generator 和 promise的语法糖，且内部实现了自动执行 generator
+let a = 0
+let b = async () => {
+    a = a + await 10
+    console.log('2', a);
+}
+b()
+a++
+console.log('1', a);

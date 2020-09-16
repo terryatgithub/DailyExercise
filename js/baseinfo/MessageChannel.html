@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MessageChannel</title>
+</head>
+<body>
+    <h1>Message Channel</h1>
+    <p class="output"> this is a para</p>
+    <iframe src="page2.html" width="480" height="320" frameborder="0"></iframe>
+    <script>
+        let channel = new MessageChannel()
+        let para = document.querySelector('p')
+        let ifr = document.querySelector('iframe')
+        
+        // 等待iframe加载完毕
+        ifr.addEventListener('load', iframeLoaded, false)
+
+        function iframeLoaded() {
+            // 监听port1的事件
+            // 通道的第一个端口，此端口连接到源上下文通道。
+            channel.port1.onmessage = handleMessage
+            // 把port2 传给 iframe
+            // port2 是一个只读属性，返回消息通道的第二个端口，该端口连接到通道另一端的上下文，也就是发送消息时的目的地。
+            // 使用 window.postMessage 方法把  MessageChannel.port2 和一条消息一起传给 IFrame.
+            ifr.contentWindow.postMessage('hello from the main page', '*', [channel.port2])
+        }
+
+        function handleMessage(e){
+            console.log('main: e: ', {e});
+
+            para.innerHTML = e.data
+        }
+    </script>
+</body>
+</html>
