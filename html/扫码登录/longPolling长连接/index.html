@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.5.min.js"
+    ></script>
+
+    <title>测试长连接</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>测试长连接 long polling</h1>
+      <ul id="results"></ul>
+    </div>
+    <script>
+      let count = 0;
+      $(function ($) {
+        function longPoll() {
+          $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/longpoll",
+            data: "",
+            success: function (data) {
+              console.log(data);
+              $("#results").append(`<li>${count++}: ${data}</li>`);
+              // 获取到数据后继续发起请求
+            //   longPoll();
+              setTimeout(longPoll, 1000);
+
+            },
+            error: function (err) {
+              $("#results").append(`<li>${count++}: err: ${err}</li>`);
+              // 如果网络或服务器异常，则等待5s再发起请求
+              setTimeout(longPoll, 5000);
+            },
+          });
+        }
+        longPoll()
+      });
+    </script>
+  </body>
+</html>
